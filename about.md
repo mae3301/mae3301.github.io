@@ -4,12 +4,17 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+The [Cicada 3301 internet puzzle](https://uncovering-cicada.fandom.com/wiki/Uncovering_Cicada_Wiki) has yet to be fully solved.
+Here I hope to document some reproducible experiments exploring the unsolved portions.
 
-### More Information
+### Who am I
 
-A place to include any other types of information that you'd like to include about yourself.
+An internet rando.
+
+### Other
+
+This site is generated with jekyll. The theme is [jekyll-now](https://github.com/barryclark/jekyll-now).
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[maryann.evans3301@gmail.com](mailto:maryann.evans3301@gmail.com)
