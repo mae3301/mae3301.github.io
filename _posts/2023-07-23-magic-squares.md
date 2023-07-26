@@ -3,8 +3,9 @@ layout: post
 title: Lab Report on Magic Squares 
 ---
 
-## Summary 
-The solved portions of [*Liber Primus*](https://uncovering-cicada.fandom.com/wiki/Liber_Primus_Unsolved_Pages) allow us to fill in part, but not all, of the magic squares in sections 3 and 7 of that text with words.
+## Summary
+
+[*Liber Primus*](https://uncovering-cicada.fandom.com/wiki/Liber_Primus_Unsolved_Pages) contains two magic squares of numbers in sections 3 and 7.  The deciphered portions of that text provide words "matching" some, but not all, of the numbers in those squares. The explanation of what it means for a word to "match" a number is detailed in this report.
 
 ## Disclaimer/Warning
 Nothing dangerous about this investigation, unless it is the danger posed to one's mental health by obsessing.  
@@ -130,9 +131,38 @@ How then to choose a the universe of strings for my search? Since the 2016 hint 
 My method was pretty simple.  I wrote a python program to calculate the gematria sums of the words and sentences in the solved pages. Once I had this data, I iterated through the numbers in each magic square to see if one or more word was associated with the number.  I have post some code that shows how to read in processed data and check for the presence of gematria sums. (My full code to process the master text is definitely under construction.)
  
 ## Results ##
-I was able to find words corresponding to all but one of the numbers in the first magic square and only one in the second magic square. No sentence in the LP corresponded to any magic square numbers.
+I was able to find words corresponding to all but one of the numbers in the first magic square and only two numbers in the second magic square. Admittedly for matrix 1, many of these words were the words already provided by 3301 as matches. No sentence in *Liber Primus* corresponded to any magic square numbers.
 
-The matches I did find are presented below.
+The results are presented below.
+
+|numbers|strings|matrix|
+|:------:|:------:|:------:|
+|320|ᚳᚪᚱᚾᚪᛚ (KARNAL), ᚪᚾᚪᛚᚩᚷ (ANALOG)|1|
+|226|ᛗᚩᛒᛁᚢᛋ (MOBIUS)|1|
+|366|ᚫᚦᛖᚱᛠᛚ (AETHEREAL)|1|
+|91|ᚠᚱᚩᛗ (FROM), ᚠᚩᚱᛗ (FORM)|1|
+|245|ᚩᛒᛋᚳᚢᚱᚪ (OBSKURA)|1|
+|151|ᚠᛁᚾᛞ (FIND)|1|
+|341|ᛋᚻᚪᛞᚩᚹᛋ (SHADOWS), ᚳᚪᛒᚪᛚ (KABAL)|1|
+|18|ᚩᚱ (OR)|1|
+|138|ᚹᚻᛖᚾ (WHEN)|1|
+|199|ᛗᚩᚢᚱᚾᚠᚢᛚ (MOURNFUL), ᛒᚢᚠᚠᛖᚱᛋ (BUFFERS)|1|
+|131|*not found*|1|
+|130|ᚢᚩᛁᛞ (UOID)|1|
+|272|ᛏᛖᛚᛚ (TELL), ᛁᛗᛈᚩᛋᛖ (IMPOSE)|1|
+|620|*not found*|2|
+|434|ᚱᛠᛚᛁᛏᛁᛖᛋ (REALITIES)|2|
+|1071|*not found*|2|
+|626|*not found*|2|
+|812|*not found*|2|
+|280|ᛁᚾᛋᛏᚪᚱ (INSTAR)|2|
+|934|*not found*|2|
+|1311|*not found*|2|
+|278|*not found*|2|
+|204|*not found*|2|
+|966|*not found*|2|
+|809|*not found*|2|
+|312|*not found*|2|
 
 ## Discussion 
 Because the map between English rune strings and gematria sums is not one-to-one and onto, it does not have a well-defined inverse.  It is thus unclear how to match an arbitrary natural number with a string.  Restricting the search to a universe of strings could help, but there is no guarantee that it will. It is difficult, perhaps impossible, to find a natural corpus large enough to provide English words for each number in the squares and still small enough to avoid the problem of an abundance of repeats.
