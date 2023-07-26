@@ -93,22 +93,41 @@ The phrase "their numbers" calls back to the first section of "Intus," which war
 
 In both cases, 3301 refers to the "numbers" of the words.  In what sense does a word possess a number or numbers? A gematria sum of the individual letters in the word is certainly one way, and one that had been reinforced by previous puzzles.
 
-It seemed to me that if 3301 wanted solvers to look at the numbers of the words, maybe the magic square was a clue. [say more]  Thus I set out to look for words or sentences in the solved LP whose gematria sums were in the magic squares.   
+It seemed to me that if 3301 wanted solvers to look at the numbers of the words, maybe the magic square was a clue. Maybe expanding the squares into a concatenation of runes would provide a key to decode the rest of the text.  Thus I set out to look for words or sentences in the solved *Liber Primus* whose gematria sums were in the magic squares.   
 
 ### A brief mathematical treatment of the Gematria Primus
-We can treat the "value" of a rune as a mapping from each of the 29 runes in the runic alphabet to a prime number.  Thus
-V: 
-V is a function, insofar as each rune is associated with only one prime. It is moreover one-to-one, insofar as each prime is associated with at most one rune. 
+The point of this section is to arrive at some fairly simple conclusions in a concise way, for those whose thinking is aided by symbolism. Nothing about summing up rune values is super sophisticated, so feel free to ignore the math parts if they don't help you.
 
-The gematria sum (henceforth G) is a second and related mapping. Its domain is string of runes and its range is a natural number, which may or may not be prime.  The formal definition of G is: 
+Let  $$\textit{R}$$ be the set of runes.  Let $$\textit{R*}$$ be the set of all strings over R, which will include all English words spelled with runes. Let $$\Lambda$$ represent the empty string and let $$P(n)$$ be the set of the first $$n$$ prime numbers.  
 
-Like V, G is a function: each string of runes has a single gematria sum. However, it definitely is not one-to-one. Many different strings for runes have the same sum. This means that the inverse of G, G-1, is not a function. Practically speaking, any attempt to map a number back to a string of runes requires choosing which of many different runes to associate with that number. Simply requiring that the string be an English word is not enough. In fact, the magic square illustrates this property of the gematria sum by associating [] and [] with the letter .
+We can treat the "value" of a rune as a mapping from each of the 29 runes in the runic alphabet to a prime number.  That is:
 
-How to restrict the universe of strings? Since the 2016 "hint" mentioned the Liber Primus in particular, I decided to focus on the solved portion of that text. Of course, conducting a "book search" didn't guarantee that I would find exactly what I was looking for: one or at most two words or sentences associated with each number in a magic squares. I was hoping that in this respect the
-LP would be well-behaved. That in turn would make me feel like I was on the right track. 
+$$\textbf{V}: R \rightarrow P(29)$$
+
+The definition of $$\textbf{V}$$ is simply defined by the gematria table above. $$\textbf{V}$$ is a function, insofar as each rune is associated with only one prime. It is moreover one-to-one, insofar as each prime in $$P(29)$$ is associated with at most one rune. 
+
+The gematria sum (henceforth $$\textbf{G}$$) is a second and related mapping. Its domain is all strings of runes and its range is a natural number, which may or may not be prime.  Formally:
+
+$$\textbf{G}: R^* \rightarrow \mathbb{N}$$
+
+We have already seen that $$\textbf{G}$$ is just calculated by summing up the values of individual runes, but we can also provide a formal (and recursive) definition that relies on regular expressions.
+For $$s \in \textit{R*}$$,
+
+$$\textbf{G}(s) = \begin{cases}
+   0 &\text{if } s = \Lambda \\
+   \textbf{V}(r) + \textbf{G}(r*) &\text{if } s = rr*
+\end{cases}$$
+
+(Here $$rr*$$ means "a rune, followed by 0 or more runes.)
+
+Like $$\textbf{V}$$, $$\textbf{G}$$ is a function: each string of runes has a single gematria sum. However, it definitely is not one-to-one. Many different strings for runes have the same sum. This means that the inverse of $$\textbf{G}$$, $$\textbf{G}^{-1}$$, is not a function. Practically speaking, any attempt to map a number back to a string of runes requires choosing which of many different rune strings to associate with that number. Simply requiring that the string be an English word is not enough. In fact, the magic square illustrates this property of the gematria sum by associating the runic words "ᚳᚪᛒᚪᛚ" ("cabal") and "ᛋᚻᚪᛞᚩᚹᛋ" ("shadows") with the number 341.
+
+Moreover, $$\textbf{G}$$ is not "onto" the natural numbers, because no string equals 1. When restricting  $$\textbf{G}$$ to English, the problem is worse.  We know, at the very least, that there is no rune string in English corresponding to the numbers 2 and 5. ("F"=2 is not a word, nor is "TH", "FU", or "UF".) For large numbers like 1071 (in the second magic square), it is difficult to guess. 
+
+How then to choose a the universe of strings for my search? Since the 2016 hint mentioned the *Liber Primus* in particular, I decided to focus on the solved portion of that text. Of course, narrowing the search this way didn't guarantee that I would find exactly what I was looking for: one or at most two English words or sentences associated with each number in each magic square. I was hoping that in this respect the text would be well-behaved. That result in turn would make me feel like I was on the right track. 
 
 ## Method
-My method was pretty simple.  I wrote a python program to calculate the gematria sums of the words and sentences in the solved pages. Once I had this data, I iterated through the numbers in each magic square to see if one or more word was associated with the number.
+My method was pretty simple.  I wrote a python program to calculate the gematria sums of the words and sentences in the solved pages. Once I had this data, I iterated through the numbers in each magic square to see if one or more word was associated with the number.  I have post some code that shows how to read in processed data and check for the presence of gematria sums. (My full code to process the master text is definitely under construction.)
  
 ## Results ##
 I was able to find words corresponding to all but one of the numbers in the first magic square and only one in the second magic square. No sentence in the LP corresponded to any magic square numbers.
@@ -116,8 +135,10 @@ I was able to find words corresponding to all but one of the numbers in the firs
 The matches I did find are presented below.
 
 ## Discussion 
-Because the map between rune strings and sums is not one-to-one, it does not have a well-defined inverse.  It is thus unclear how to match a number with a string when multiple strings can have the same sum.  Restricting the search to a small universe of string could solve that problem, but there is no guarantee that it will. It is difficult, perhaps impossible, to find a natural corpus large enough to provide strings for each number in the squares and still small enough to avoid the problem of repeats.
+Because the map between English rune strings and gematria sums is not one-to-one and onto, it does not have a well-defined inverse.  It is thus unclear how to match an arbitrary natural number with a string.  Restricting the search to a universe of strings could help, but there is no guarantee that it will. It is difficult, perhaps impossible, to find a natural corpus large enough to provide English words for each number in the squares and still small enough to avoid the problem of an abundance of repeats.
  
 ## Final Words
 
-3301 certainly seemed to be teaching solvers how to calculate gematria sums in 2013 and 2014. The magic square in section of the LP was part of that education and remains a tantalizing clue.  Yet it is unclear if the mapping G can help to solve *Liber Primus*. 
+3301 certainly seemed to be teaching solvers how to calculate gematria sums in 2013 and 2014. The magic square in section of the LP was part of that education and remains a tantalizing clue. It is unclear if the gematria sum can help to solve *Liber Primus*. . . 
+
+And yet! Solver Jon46 has alerted me to the presence of some key magic square words in the Blake poem "The Book of Urizen" so I will perhaps continue my quixotic journey with an examination of that text.
