@@ -10,7 +10,7 @@ title: Lab Report on Magic Squares
 ## Disclaimer/Warning
 Nothing dangerous about this investigation, unless it is the danger posed to one's mental health by obsessing.  
 
-Some of the history is taken from the Cicada 3301 wiki, since I did not participate in the 2012-2014 challenges.  I have tried my best to link back to the wiki where appropriate.
+Some of the history is taken from the Uncovering Cicada [wiki](https://uncovering-cicada.fandom.com/wiki/Uncovering_Cicada_Wiki) and Nox Populi's [youtube channel](https://www.youtube.com/@NoxPopuli), since I did not participate in the 2012-2014 challenges.  I have tried my best to link back to these sources where appropriate.
 
 ## Introduction 
 Setting up the parameters of the problem here requires a deep dive into the world of the 3301 challenge and the puzzles leading up to the delivery of the final 58 pages of *Liber Primus*.
@@ -51,12 +51,12 @@ In 2013, solving the puzzles included uncovering the following [jpg file](https:
 |ᛡ|IA/IO|107|
 |ᛠ|EA|109| 
 
-Besides providing solvers with a mapping of sorts, the jpg introduced the idea of gematria to the puzzle. The word comes from the [] word for . Wikipedia explains that "." The runes provided by the table are of course not Hebrew letters. According to the [cicada wiki](), they were identified by a solver as a variant of the Anglo-Saxon rune set. 
+Besides providing solvers with a mapping of sorts, the jpg introduced the idea of gematria to the puzzle. The word comes from Hebrew; Wikipedia [defines it](https://en.wikipedia.org/wiki/Gematria) as "the practice of assigning a numerical value to a name, word or phrase by reading it as a number." It is well-known as a feature of Jewish commentary on the Hebrew Bible, but other cultures have practiced it also. The runes provided by the table are of course not Hebrew letters. According to the [cicada wiki](https://uncovering-cicada.fandom.com/wiki/What_Happened_Part_1_(2013)#The_Gematria), they were identified by a solver as a variant of the Anglo-Saxon rune set. 
 
-Other stages of the 2013 puzzle encouraged solvers to use the values of characters to perform traditional and perhaps less traditional feats of gematria. For instance, the 2013 [telnet service]() encouraged solvers to add up the values associated with letters in a word to arrive at a larger number (henceforth referred to as a gematria sum). A second example, the poem "Parable," essentially taught solvers to associate sentences with the gematria sums of the values of the characters making them up. It even illustrated how multiplying together the gematria sums of three sentences led to a gematria product. 
+Other stages of the 2013 puzzle encouraged solvers to use the values of characters to perform traditional and perhaps less traditional feats of gematria. For instance, the 2013 [telnet service](https://www.youtube.com/watch?v=9bjFtZ3aoSQ&ab_channel=NoxPopuli) encouraged solvers to add up the values associated with letters in a word to arrive at a larger number (henceforth referred to as a gematria sum). A second example, the poem "Parable," essentially taught solvers to associate sentences with the gematria sums of the values of the characters making them up. It even illustrated how multiplying together the gematria sums of three sentences led to a [gematria product](https://uncovering-cicada.fandom.com/wiki/Instar_emergence_(mp3_and_hidden_poem)). 
 
 ### 2014
-The 2014 puzzle required solvers to submit one of three magic squares to a service in order to reach the next step of the game. A magic square is an matrix of numbers whose rows, columns, and sometimes diagonals all sum to the same number. The magic squares used by 3301 had sums of 3301 and 1033. One of the squares (sum 1033) is the following:
+The 2014 puzzle required solvers to submit one of [three magic squares](https://uncovering-cicada.fandom.com/wiki/What_Happened_Part_1_(2014)#The_Sixth_Onion) to a service in order to reach the next step of the game. A magic square is an matrix of numbers whose rows, columns, and sometimes diagonals all sum to the same number. The magic squares used by 3301 had sums of 3301 and 1033. One of the squares (sum 1033) is the following:
 
 |272|138|341|131|151|
 |366|199|130|320|18|
@@ -169,6 +169,4 @@ Because the map between English rune strings and gematria sums is not one-to-one
  
 ## Final Words
 
-3301 certainly seemed to be teaching solvers how to calculate gematria sums in 2013 and 2014. The magic square in section of the LP was part of that education and remains a tantalizing clue. It is unclear if the gematria sum can help to solve *Liber Primus*. . . 
-
-And yet! Solver Jon46 has alerted me to the presence of some key magic square words in the Blake poem "The Book of Urizen" so I will perhaps continue my quixotic journey with an examination of that text.
+3301 certainly seemed to be teaching solvers how to calculate gematria sums in 2013 and 2014. The magic square in section 3 of *Liber Primus* was part of that education and remains a tantalizing clue. However, given their limitations, it is unclear if gematria sums can help to decrypt the remainder of  *Liber Primus*.
